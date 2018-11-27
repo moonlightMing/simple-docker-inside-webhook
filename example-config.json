@@ -1,0 +1,32 @@
+{
+  "#开头为注释":"须将该文件重命名为config.json",
+  "bind_host": ":9375",
+  "docker_host": "dockerhost:2375",
+  "docker_api_version": "1.37",
+
+  "#WebHook的key参数":"",
+  "auth_key": "xxx",
+
+  "#Docker仓库账号":"",
+  "docker_registry_auth": {
+    "user": "xxx@qq.com",
+    "password": "xxx"
+  },
+  "email": {
+    "#邮件功能开关":"",
+    "open": true,
+    "smtp_host": "smtp.163.com",
+    "smtp_port": ":465",
+    "user_email": "xxx@163.com",
+    "#邮件认证码":"从发送者邮件后台获取",
+    "password": "xxxx",
+    "#邮件发送目标地址":"如有多个用';'号分割",
+    "send_to": "xxxx@qq.com"
+  },
+  "cron": [
+    {
+      "event": "clean-images",
+      "spec": "* * * * * * *"
+    }
+  ]
+}

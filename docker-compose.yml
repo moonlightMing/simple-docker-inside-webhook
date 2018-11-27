@@ -1,0 +1,6 @@
+version: '3'
+services:
+  simple-docker-inside-webhook:
+    image: registry.cn-shenzhen.aliyuncs.com/moonlightming/simple-docker-inside-webhook:latest
+    ports:
+      - "9375:9375"
