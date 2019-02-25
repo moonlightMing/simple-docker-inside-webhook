@@ -19,6 +19,9 @@ RUN apk add --no-cache tzdata ca-certificates \
      && echo ${TIME_ZONE} > /etc/timezone    \
      && ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
 
+# 将宿主机Docker IP地址写入本地Host
+RUN /sbin/ip route|awk '/default/ { print  $3,"\tdockerhost" }' >> /etc/hosts
+
 COPY --from=0 /go/src/github.com/moonlightming/simple-docker-inside-webhook/ /src/app/webhook
 
 CMD ["/bin/sh", "entrypoint.sh"]
