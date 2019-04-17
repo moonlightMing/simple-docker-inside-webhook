@@ -16,7 +16,7 @@ WORKDIR /src/app/webhook
 ENV TIME_ZONE="Asia/Shanghai"
 
 RUN apk add --no-cache tzdata ca-certificates \
-     && echo ${TIME_ZONE} > /etc/timezone    \
+     && echo ${TIME_ZONE} > /etc/timezone     \
      && ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
 
 # 将宿主机Docker IP地址写入本地Host
